@@ -1,5 +1,5 @@
 
-name: Run API Calls
+name: Odometer and Service Perimeter Update
 
 on:
   schedule:

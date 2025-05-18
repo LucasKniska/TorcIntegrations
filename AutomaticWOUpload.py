@@ -429,11 +429,13 @@ def convertToPost(data: list, df) -> list:
 
         description =  ", ".join(f"{i+1}. {desc}" for i, desc in enumerate(description)) if len(description) != 1 else description[0]
 
- 
         if 'major' in notes[0].lower():
             details = f'<b>{post["inspection_type"]} Inspection:</b><br>' + (";<br>".join(f"{i+1}. {desc}" for i, desc in enumerate(notes)))
         else:
             details = f'<b>Motive Base Truck - {post["inspection_type"]} Inspection:</b><br>' + ("<br>".join(f"{i+1}. {desc}" for i, desc in enumerate(notes)))
+
+        if post['asset'] != None:
+            details = f"{details}<br><br>Note: Potentially An Issue With {post['asset']['number']}"
 
         return (description, details)
 

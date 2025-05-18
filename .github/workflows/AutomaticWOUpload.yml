@@ -1,5 +1,5 @@
 
-name: Run API Calls
+name: Work Order Upload
 
 on:
   workflow_dispatch:

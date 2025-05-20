@@ -136,7 +136,6 @@ def postNearestCity(truck):
     
     if response.status_code != 200:
         print(f"Error updating {truck['id']}", flush=True)
-        print(response.json())
         return False
     
     return True
@@ -151,7 +150,6 @@ if __name__ == "__main__":
     for i, truck in trucks.iterrows():
 
         if(truck['nearest_city'] is not None):
-            print("Truck: ", truck['c_description'], "Nearest City: ", truck['nearest_city'], flush=True)
             postNearestCity(truck)
 
     print("Run Complete", flush=True)
